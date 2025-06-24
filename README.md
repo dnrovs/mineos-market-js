@@ -1,6 +1,5 @@
 # mineos-market-client
-> [!NOTE]
-> Inspired by/partially ported [MineOS-Market-Client](https://github.com/CoolCat467/MineOS-Market-Client) by [CoolCat467](https://github.com/CoolCat467) ([MIT licensed](https://github.com/CoolCat467/MineOS-Market-Client/blob/main/LICENSE))
+> Inspired by/partially ported [MineOS-Market-Client](https://github.com/CoolCat467/MineOS-Market-Client) by [CoolCat467](https://github.com/CoolCat467) ([GNU GPL v3 licensed](https://github.com/CoolCat467/MineOS-Market-Client/blob/main/LICENSE))
 
 A TypeScript/JavaScript library to interact with MineOS App Market API.
 
