@@ -1,0 +1,55 @@
+{
+  "name": "mineos-market-client",
+  "version": "1.0.0",
+  "description": "JS API wrapper for MineOS App Market",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "format:check": "prettier --check src/**/*.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "homepage": "https://github.com/dnrovs/mineos-market-js#readme",
+  "license": "MIT",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "bugs": {
+    "url": "https://github.com/dnrovs/mineos-market-js/issues",
+    "email": "fesuk637@gmail.com"
+  },
+  "author": {
+    "name": "dnrovs",
+    "url": "https://github.com/dnrovs",
+    "email": "fesuk637@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dnrovs/mineos-market-js"
+  },
+  "dependencies": {
+    "lua-json": "^1.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@types/lua-json": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
+    "globals": "^16.2.0",
+    "prettier": "^3.6.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.0"
+  }
+}
