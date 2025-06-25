@@ -9,7 +9,7 @@ npm i mineos-market-client
 ```
 ## Usage
 ```javascript
-import * as market from "mineos-market-js"
+import * as market from "mineos-market-client"
 
 const user = await market.login({ email: "user@example.com", password: "prettypassword" })
 const token = user.token
