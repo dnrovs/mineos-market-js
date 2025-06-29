@@ -1,6 +1,6 @@
 {
   "name": "mineos-market-client",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "JS API wrapper for MineOS App Market",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,12 @@
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build"
   },
-  "keywords": ["mineos", "minecraft", "openos", "market"],
+  "keywords": [
+    "mineos",
+    "minecraft",
+    "openos",
+    "market"
+  ],
   "homepage": "https://github.com/dnrovs/mineos-market-js#readme",
   "license": "MIT",
   "files": [
