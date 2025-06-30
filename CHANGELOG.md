@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/dnrovs/mineos-market-js/compare/v2.0.0...v2.1.0) (2025-06-30)
+
+
+### Features
+
+* implemented configuration support ([226a2ad](https://github.com/dnrovs/mineos-market-js/commit/226a2ada4920a1a3013a8f76a9a5222812d0ede9))
+
 ## [2.0.0](https://github.com/dnrovs/mineos-market-js/compare/v1.0.0...v2.0.0) (2025-06-29)
 
 
