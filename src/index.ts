@@ -6,3 +6,5 @@ export * as Messages from './api/messages/index.js'
 
 export * as Enums from './shared/enums.js'
 export * from './shared/types.js'
+
+export { setConfig } from './api/config.js'

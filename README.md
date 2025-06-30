@@ -1,4 +1,4 @@
-# mineos-market-client
+# mineos-market-js
 > Inspired by/partially ported [MineOS-Market-Client](https://github.com/CoolCat467/MineOS-Market-Client) by [CoolCat467](https://github.com/CoolCat467) ([GNU GPL v3 licensed](https://github.com/CoolCat467/MineOS-Market-Client/blob/main/LICENSE))
 
 ![NPM Version](https://img.shields.io/npm/v/mineos-market-client?style=flat)
@@ -22,4 +22,16 @@ const token = user.token
 console.log(
     await Messages.getDialogs({ token })
 )
+```
+## Configuration
+All configuration parameters are optional.
+```javascript
+import { setConfig } from "mineos-market-client"
+
+setConfig({
+    hostUrl: "http://customapi.net/", // String for a custom host
+    proxy: "http://corsproxy.io/?url=", // String for custom proxy. Useful for CORS bypassing
+    userAgent: "Opera/9.80", // String for custom UA, null to exclude from headers
+    headers: { 'Some-Header': 'value' } // Record<string, string> for additional headers
+})
 ```

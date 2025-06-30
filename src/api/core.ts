@@ -1,9 +1,6 @@
 import { parse } from 'lua-json'
 import { convertKeysToCamel } from '../utils/case.js'
-
-const host = 'http://mineos.buttex.ru/MineOSAPI/2.04/'
-const agent =
-    'Mozilla/5.0 (Macintosh Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36'
+import { getConfig } from './config'
 
 class APIError extends Error {
     constructor(message: string) {
@@ -16,12 +13,17 @@ export async function apiRequest<T>(
     script: string,
     options?: Record<string, any>
 ): Promise<T> {
-    const response = await fetch(host + script + '.php', {
+    const config = getConfig()
+
+    const headers: HeadersInit = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        ...(config.userAgent && { 'User-Agent': config.userAgent }),
+        ...config.headers
+    }
+
+    const response = await fetch(config.hostUrl + script + '.php', {
         method: 'POST',
-        headers: {
-            'User-Agent': agent,
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
+        headers: headers,
         body: new URLSearchParams(options)
     })
 
