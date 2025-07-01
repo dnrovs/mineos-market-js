@@ -1,13 +1,6 @@
 # Changelog
 
-## [2.1.1](https://github.com/dnrovs/mineos-market-js/compare/v2.1.0...v2.1.1) (2025-06-30)
-
-
-### Bug Fixes
-
-* fixed empty dist on npm ([a6d8229](https://github.com/dnrovs/mineos-market-js/commit/a6d8229ce2a8cf7509c67c948831101d6967faa6))
-
-## [2.1.0](https://github.com/dnrovs/mineos-market-js/compare/v2.0.0...v2.1.0) (2025-06-30)
+## [2.1.1](https://github.com/dnrovs/mineos-market-js/compare/v2.0.0...v2.1.1) (2025-06-30)
 
 
 ### Features
