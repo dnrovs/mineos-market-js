@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.2](https://github.com/dnrovs/mineos-market-js/compare/v2.1.1...v2.1.2) (2025-07-07)
+
+
+### Bug Fixes
+
+* fixed requests with array bodies ([9d771e8](https://github.com/dnrovs/mineos-market-js/commit/9d771e8b5b37c15c6adf127a2b52401de8f8a5f3))
+
 ## [2.1.1](https://github.com/dnrovs/mineos-market-js/compare/v2.0.0...v2.1.1) (2025-06-30)
 
 
