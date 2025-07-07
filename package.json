@@ -1,6 +1,6 @@
 {
   "name": "mineos-market-client",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "JS API wrapper for MineOS App Market",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
