@@ -9,7 +9,7 @@ import {
 import { PreviewPublication, Publication } from './responses.js'
 import { PublicationLanguage } from '../../shared/enums.js'
 import { SuccessResponse } from '../../shared/types.js'
-import { recordToArray } from '../../utils/transform.js'
+import { arrayToUri, recordToArray } from '../../utils/transform.js'
 
 /**
  * Get store's publications.
@@ -47,7 +47,16 @@ export async function getPublications({
     if (orderDirection) options.order_direction = orderDirection
     if (offset) options.offset = offset
     if (search) options.search = search
-    if (fileIds) options.file_ids = fileIds
+
+    if (fileIds) {
+        Object.assign(options, arrayToUri('file_ids', fileIds))
+    }
+
+    if (fileIds) {
+        fileIds.map((value, index) => {
+            options[`file_ids[${index + 1}]`] = value
+        })
+    }
 
     return recordToArray(
         await apiRequest<Record<string, PreviewPublication>>(
@@ -124,8 +133,11 @@ export async function uploadPublication({
         path: path,
         description: description,
         license_id: license,
-        category_id: category,
-        dependencies: dependencies
+        category_id: category
+    }
+
+    if (dependencies) {
+        Object.assign(options, arrayToUri('dependencies', dependencies))
     }
 
     if (whatsNew) {
@@ -186,8 +198,11 @@ export async function updatePublication({
         path: path,
         description: description,
         license_id: license,
-        category_id: category,
-        dependencies: dependencies
+        category_id: category
+    }
+
+    if (dependencies) {
+        Object.assign(options, arrayToUri('dependencies', dependencies))
     }
 
     if (whatsNew) {
