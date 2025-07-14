@@ -24,10 +24,12 @@ export async function getReviews({
     offset = 0,
     count
 }: GetReviewsParams): Promise<Review[]> {
-    const options: Record<string, any> = { file_id: publicationFileId }
+    const options: Record<string, string> = {
+        file_id: publicationFileId.toString()
+    }
 
-    if (offset) options.offset = offset
-    if (count) options.count = count
+    if (offset) options.offset = offset.toString()
+    if (count) options.count = count.toString()
 
     const raw = await apiRequest<Review[]>('reviews', options)
 
