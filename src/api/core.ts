@@ -1,6 +1,6 @@
 import { parse } from 'lua-json'
 import { convertKeysToCamel } from '../utils/case.js'
-import { getConfig } from './config'
+import { getConfig } from './config.js'
 
 class APIError extends Error {
     constructor(message: string) {
