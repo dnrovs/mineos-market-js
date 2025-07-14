@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.3](https://github.com/dnrovs/mineos-market-js/compare/v2.1.2...v2.1.3) (2025-07-14)
+
+
+### Bug Fixes
+
+* fixed config's import ([fee1526](https://github.com/dnrovs/mineos-market-js/commit/fee15260614a2e60e06a78a677a7ff497815f184))
+
 ## [2.1.2](https://github.com/dnrovs/mineos-market-js/compare/v2.1.1...v2.1.2) (2025-07-07)
 
 
