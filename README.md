@@ -89,7 +89,7 @@ console.log(
 await client.messages.sendMessage({ userName: 'dnrovs', text: 'you stink' })
 ```
 ### Configuration
-You can configure some aspects of the client, such as changing the host URL or adding custom HTTP headers. Config type reference is [here](https://dnrovs.github.io/mineos-market-js/interfaces/Config.html).
+You can configure some aspects of the client, such as changing the host URL or adding custom HTTP headers. Config type reference is [here](https://dnrovs.github.io/mineos-market-js/types/Config.html).
 ```javascript
 // Partially rewrite a default config
 client.useConfig({
