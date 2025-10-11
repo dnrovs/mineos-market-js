@@ -20,11 +20,11 @@ export enum FileType {
 
 export enum License {
     MIT = 1,
-    GnuGplv3,
-    GnuAgplv3,
-    GnuLgplv3,
+    GPL3,
+    AGPL3,
+    LGPL3,
     ApacheLicense2,
-    MozillaPublicLicense2,
+    MPL2,
     TheUnlicense
 }
 
@@ -38,4 +38,14 @@ export enum OrderBy {
 export enum OrderDirection {
     Ascending = 'asc',
     Descending = 'desc'
+}
+
+export enum VerificationStatus {
+    Unverified,
+    Verified
+}
+
+export enum MessageStatus {
+    Unread,
+    Read
 }
