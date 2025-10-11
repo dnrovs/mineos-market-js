@@ -25,20 +25,15 @@ const { MarketClient } = require('mineos-market-client')
 ```
 ### Browser (CDN)
 ```html
-<script src="https://unpkg.com/mineos-market-client@3/dist/index.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mineos-market-client@3/dist/index.umd.min.js"></script>
 ```
-In this case, use `MineOSMarket` browser global:
-
-- `new MineOSMarket.MarketClient()` instead of `new MarketClient()`
-- `MineOSMarket.License.MIT` instead of `License.MIT`
-
-etc.
+In this case, use `MineOSMarket` browser global.
 ### Browser (module)
 ```html
 <script type="importmap">
     {
         "imports": {
-            "mineos-market-client": "https://cdn.jsdelivr.net/npm/mineos-market-client@1/+esm",
+            "mineos-market-client": "https://cdn.jsdelivr.net/npm/mineos-market-client@3/dist/index.js",
 
             "camelcase-keys": "https://cdn.jsdelivr.net/npm/camelcase-keys@10.0.0/+esm",
             "lua-json": "https://cdn.jsdelivr.net/npm/lua-json@1.0.1/+esm",
