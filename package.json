@@ -1,37 +1,15 @@
 {
   "name": "mineos-market-client",
   "version": "2.1.3",
-  "description": "JS API wrapper for MineOS App Market",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix",
-    "format": "prettier --write src/**/*.ts",
-    "format:check": "prettier --check src/**/*.ts",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist",
-    "prepublishOnly": "npm run clean && npm run build"
-  },
+  "description": "API client for MineOS App Market",
   "keywords": [
     "mineos",
+    "opencomputers",
     "minecraft",
-    "openos",
-    "market"
+    "app market",
+    "api"
   ],
-  "homepage": "https://github.com/dnrovs/mineos-market-js#readme",
   "license": "MIT",
-  "files": [
-    "dist/",
-    "README.md",
-    "LICENSE"
-  ],
-  "bugs": {
-    "url": "https://github.com/dnrovs/mineos-market-js/issues",
-    "email": "fesuk637@gmail.com"
-  },
   "author": {
     "name": "dnrovs",
     "url": "https://github.com/dnrovs",
@@ -41,16 +19,58 @@
     "type": "git",
     "url": "https://github.com/dnrovs/mineos-market-js"
   },
+  "bugs": {
+    "url": "https://github.com/dnrovs/mineos-market-js/issues",
+    "email": "fesuk637@gmail.com"
+  },
+  "homepage": "https://github.com/dnrovs/mineos-market-js#readme",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "browser": "dist/index.umd.min.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "browser": "./dist/index.umd.min.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "prettier": "prettier --check src/**/*.ts",
+    "docs": "typedoc src/",
+    "build": "rollup -c"
+  },
   "dependencies": {
-    "lua-json": "^1.0.1"
+    "camelcase-keys": "10.0.0",
+    "lua-json": "^1.0.1",
+    "zod": "^4.0.17"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
     "@types/lua-json": "^1.0.3",
+    "@types/node": "^24.7.2",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.2.0",
     "prettier": "^3.6.0",
-    "typescript": "^5.8.3",
+    "rollup": "^4.46.2",
+    "rollup-plugin-dts": "^6.2.1",
+    "tslib": "^2.8.1",
+    "typedoc": "^0.28.10",
+    "typedoc-github-theme": "^0.3.1",
+    "typescript": "^5.9.3",
     "typescript-eslint": "^8.35.0"
   }
 }
