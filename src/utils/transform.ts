@@ -1,19 +1,27 @@
-export function recordToArray<T>(record: Record<string, T>): T[] {
-    return Object.values(record)
-}
+import { JsonValue } from '../shared/types'
 
-export function arrayToUri(
-    key: string,
-    values: (string | number | boolean)[]
+export function normalize(
+    object: Record<string, JsonValue>
 ): Record<string, string> {
-    return values.reduce(
-        (acc, value, index) => {
-            acc[`${encodeURIComponent(key)}[${index + 1}]`] =
-                `${encodeURIComponent(value)}`
-            return acc
-        },
-        {} as Record<string, string>
-    )
+    const result: Record<string, string> = {}
+
+    const serialize = (value: JsonValue, key?: string) => {
+        if (value === undefined || value === null) return
+
+        if (Array.isArray(value)) {
+            value.forEach((v, i) => serialize(v, key ? `${key}[${i}]` : `${i}`))
+        } else if (typeof value === 'object') {
+            Object.entries(value).forEach(([k, v]) =>
+                serialize(v, key ? `${key}[${k}]` : k)
+            )
+        } else if (key) {
+            result[key] = String(value)
+        }
+    }
+
+    Object.entries(object).forEach(([k, v]) => serialize(v, k))
+
+    return result
 }
 
 export function forceStringKeys(
