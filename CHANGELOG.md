@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.0.0](https://github.com/dnrovs/mineos-market-js/compare/v2.1.3...v3.0.0) (2025-10-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* Zod responses validation
+* main class with service modules structure
+
+### Features
+
+* extended and adjusted enums ([415e28f](https://github.com/dnrovs/mineos-market-js/commit/415e28fafa67c1e40d9ddf0fb28e6652a354a6d8))
+* main class with service modules structure ([0de8e81](https://github.com/dnrovs/mineos-market-js/commit/0de8e814e7c1bf6f1b3766b3b4a5e2f17bb9f5b5))
+* rollup bundling (CJS, ESM, UMD) ([8895fd3](https://github.com/dnrovs/mineos-market-js/commit/8895fd3ec42488dd507bb18f7bd4fb28083def27))
+* search publications by publisher's username ([0de8e81](https://github.com/dnrovs/mineos-market-js/commit/0de8e814e7c1bf6f1b3766b3b4a5e2f17bb9f5b5))
+* Zod responses validation ([0de8e81](https://github.com/dnrovs/mineos-market-js/commit/0de8e814e7c1bf6f1b3766b3b4a5e2f17bb9f5b5))
+
+
+### Bug Fixes
+
+* fixed the missing first requested publication when querying by ID array ([8e7a7da](https://github.com/dnrovs/mineos-market-js/commit/8e7a7da55dbf8c0236349059312c4521d841a4c0))
+* fixed uploading publication's dependencies ([0de8e81](https://github.com/dnrovs/mineos-market-js/commit/0de8e814e7c1bf6f1b3766b3b4a5e2f17bb9f5b5))
+
 ## [2.1.3](https://github.com/dnrovs/mineos-market-js/compare/v2.1.2...v2.1.3) (2025-07-14)
 
 
