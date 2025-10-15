@@ -110,7 +110,7 @@ export type Publication = {
     /** URL to the publication's icon image */
     iconUrl?: string
     /** Average rating score from reviews */
-    averageRating: number
+    averageRating?: number
     /** Description of recent changes */
     whatsNew?: string
     /** Version number when whatsNew was last updated */
@@ -135,7 +135,7 @@ export const PublicationSchema: z.ZodType<Publication> = z.object({
     dependencies: z.array(z.number()).optional(),
     allDependencies: z.array(z.number()).optional(),
     iconUrl: z.string().optional(),
-    averageRating: z.number(),
+    averageRating: z.number().optional(),
     whatsNew: z.string().optional(),
     whatsNewVersion: z.number().optional(),
     downloads: z.number()
