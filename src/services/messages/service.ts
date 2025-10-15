@@ -46,24 +46,30 @@ export interface Messages {
 export class MessagesService extends BaseService implements Messages {
     async getDialogs(): Promise<Dialog[]> {
         return Object.values(
-            await this.core.request<Record<string, Dialog>>(
+            await this.core.request(
                 'dialogs',
                 undefined,
                 true,
-                z.record(z.string(), DialogSchema)
+                z.union([
+                    z.record(z.string(), DialogSchema),
+                    z.array(z.never())
+                ])
             )
         )
     }
 
     async getDialog(params: GetDialogParams): Promise<Message[]> {
         return Object.values(
-            await this.core.request<Record<string, Message>>(
+            await this.core.request(
                 'messages',
                 {
                     user_name: params.userName
                 },
                 true,
-                z.record(z.string(), MessageSchema)
+                z.union([
+                    z.record(z.string(), MessageSchema),
+                    z.array(z.never())
+                ])
             )
         )
     }
