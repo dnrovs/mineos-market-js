@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.1](https://github.com/dnrovs/mineos-market-js/compare/v3.0.0...v3.0.1) (2025-10-15)
+
+
+### Bug Fixes
+
+* corrected schema for Publication ([cfc0d0f](https://github.com/dnrovs/mineos-market-js/commit/cfc0d0fc924fcdd267f660116999b413ccd04b2d))
+* fixed handling of responses returning empty arrays ([7ee9c7f](https://github.com/dnrovs/mineos-market-js/commit/7ee9c7fe0fcd1a414b8bac68e72f70e59e035555))
+
 ## [3.0.0](https://github.com/dnrovs/mineos-market-js/compare/v2.1.3...v3.0.0) (2025-10-11)
 
 
