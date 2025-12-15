@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/dnrovs/mineos-market-js/compare/v3.0.1...v3.0.2) (2025-12-15)
+
+
+### Bug Fixes
+
+* fixed handling different types of lua tables and arrays ([26a2922](https://github.com/dnrovs/mineos-market-js/commit/26a2922a591f2af1d1b72f105e20f28e3a2fee98))
+
 ## [3.0.1](https://github.com/dnrovs/mineos-market-js/compare/v3.0.0...v3.0.1) (2025-10-15)
 
 
