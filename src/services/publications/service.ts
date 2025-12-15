@@ -162,10 +162,7 @@ export class PublicationsService extends BaseService implements Publications {
                     file_ids: params.fileIds
                 },
                 false,
-                z.union([
-                    z.record(z.string(), PreviewPublicationSchema),
-                    z.array(z.never())
-                ])
+                z.array(PreviewPublicationSchema)
             )
         )
     }

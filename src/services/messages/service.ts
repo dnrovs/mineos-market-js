@@ -50,10 +50,7 @@ export class MessagesService extends BaseService implements Messages {
                 'dialogs',
                 undefined,
                 true,
-                z.union([
-                    z.record(z.string(), DialogSchema),
-                    z.array(z.never())
-                ])
+                z.array(DialogSchema)
             )
         )
     }
@@ -66,10 +63,7 @@ export class MessagesService extends BaseService implements Messages {
                     user_name: params.userName
                 },
                 true,
-                z.union([
-                    z.record(z.string(), MessageSchema),
-                    z.array(z.never())
-                ])
+                z.array(MessageSchema)
             )
         )
     }

@@ -49,8 +49,8 @@
     "build": "rollup -c"
   },
   "dependencies": {
+    "@kilcekru/lua-table": "^1.1.2",
     "camelcase-keys": "10.0.0",
-    "lua-json": "^1.0.1",
     "zod": "^4.0.17"
   },
   "devDependencies": {

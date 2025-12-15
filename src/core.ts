@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { parse } from 'lua-json'
+import { parse } from '@kilcekru/lua-table'
 import camelcaseKeys from 'camelcase-keys'
 
 import { forceStringKeys, normalize } from './utils/transform'
@@ -77,8 +77,12 @@ export class Core {
         let jsonContent
         try {
             jsonContent = camelcaseKeys(
-                parse('return' + luaContent) as LuaValue,
-                { deep: true }
+                parse(luaContent, {
+                    emptyTables: 'array'
+                }) as LuaValue,
+                {
+                    deep: true
+                }
             )
         } catch (err) {
             throw new Error(

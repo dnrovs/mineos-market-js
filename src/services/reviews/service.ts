@@ -63,10 +63,7 @@ export class ReviewsService extends BaseService implements Reviews {
                     count: params.count
                 },
                 false,
-                z.union([
-                    z.record(z.string(), ReviewSchema),
-                    z.array(z.never())
-                ])
+                z.array(ReviewSchema)
             )
         )
     }
