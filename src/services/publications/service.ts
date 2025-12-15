@@ -14,7 +14,7 @@ import {
     UpdatePublicationParams,
     DeletePublicationParams
 } from './parameters'
-import { PreviewPublication, Publication } from './responses'
+import { Dependency, PreviewPublication, Publication } from './responses'
 
 import { PreviewPublicationSchema, PublicationSchema } from './responses'
 
@@ -168,7 +168,7 @@ export class PublicationsService extends BaseService implements Publications {
     }
 
     async getPublication(params: GetPublicationParams): Promise<Publication> {
-        return await this.core.request(
+        const data = await this.core.request(
             'publication',
             {
                 file_id: params.fileId,
@@ -177,6 +177,17 @@ export class PublicationsService extends BaseService implements Publications {
             false,
             PublicationSchema
         )
+
+        const dependenciesData = Object.fromEntries(
+            Object.entries(data.dependenciesData).filter(
+                (entry): entry is [string, Dependency] => entry[1] !== undefined
+            )
+        )
+
+        return {
+            ...data,
+            dependenciesData: dependenciesData ? dependenciesData : {}
+        }
     }
 
     async markDownloaded(params: MarkDownloadedParams): Promise<void> {

@@ -119,7 +119,7 @@ export type Publication = {
     downloads: number
 }
 
-export const PublicationSchema: z.ZodType<Publication> = z.object({
+export const PublicationSchema /*: z.ZodType<Publication>*/ = z.object({
     fileId: z.number(),
     publicationName: z.string(),
     userName: z.string(),
@@ -131,7 +131,7 @@ export const PublicationSchema: z.ZodType<Publication> = z.object({
     timestamp: z.number(),
     initialDescription: z.string(),
     translatedDescription: z.string(),
-    dependenciesData: z.record(z.string(), DependencySchema).optional(),
+    dependenciesData: z.array(z.union([DependencySchema, z.undefined()])),
     dependencies: z.array(z.number()).optional(),
     allDependencies: z.array(z.number()).optional(),
     iconUrl: z.string().optional(),
