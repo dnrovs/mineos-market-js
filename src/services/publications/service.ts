@@ -148,22 +148,20 @@ export class PublicationsService extends BaseService implements Publications {
     async getPublications(
         params: GetPublicationsParams = {}
     ): Promise<PreviewPublication[]> {
-        return Object.values(
-            await this.core.request(
-                'publications',
-                {
-                    category_id: params.category,
-                    order_by: params.orderBy,
-                    order_direction: params.orderDirection,
-                    offset: params.offset,
-                    count: params.count,
-                    search: params.search,
-                    user_name: params.userName,
-                    file_ids: params.fileIds
-                },
-                false,
-                z.array(PreviewPublicationSchema)
-            )
+        return await this.core.request(
+            'publications',
+            {
+                category_id: params.category,
+                order_by: params.orderBy,
+                order_direction: params.orderDirection,
+                offset: params.offset,
+                count: params.count,
+                search: params.search,
+                user_name: params.userName,
+                file_ids: params.fileIds
+            },
+            false,
+            z.array(PreviewPublicationSchema)
         )
     }
 

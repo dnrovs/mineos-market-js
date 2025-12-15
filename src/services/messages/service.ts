@@ -56,15 +56,13 @@ export class MessagesService extends BaseService implements Messages {
     }
 
     async getDialog(params: GetDialogParams): Promise<Message[]> {
-        return Object.values(
-            await this.core.request(
-                'messages',
-                {
-                    user_name: params.userName
-                },
-                true,
-                z.array(MessageSchema)
-            )
+        return await this.core.request(
+            'messages',
+            {
+                user_name: params.userName
+            },
+            true,
+            z.array(MessageSchema)
         )
     }
 

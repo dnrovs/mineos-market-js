@@ -54,17 +54,15 @@ export interface Reviews {
 
 export class ReviewsService extends BaseService implements Reviews {
     async getReviews(params: GetReviewsParams): Promise<Review[]> {
-        return Object.values(
-            await this.core.request(
-                'reviews',
-                {
-                    file_id: params.fileId,
-                    offset: params.offset,
-                    count: params.count
-                },
-                false,
-                z.array(ReviewSchema)
-            )
+        return await this.core.request(
+            'reviews',
+            {
+                file_id: params.fileId,
+                offset: params.offset,
+                count: params.count
+            },
+            false,
+            z.array(ReviewSchema)
         )
     }
 
