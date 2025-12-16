@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/dnrovs/mineos-market-js/compare/v3.0.3...v3.1.0) (2025-12-16)
+
+
+### Features
+
+* added config option to disable response schema validation ([6c7a8e8](https://github.com/dnrovs/mineos-market-js/commit/6c7a8e867a360ea8e36b787ffe0a12d31c707638))
+
+
+### Bug Fixes
+
+* fixed handling empty `dependenciesData` ([1913813](https://github.com/dnrovs/mineos-market-js/commit/1913813cc4c810cc6a57510b0a0179b23bda5b95))
+* fixed incorrectly typed numeric values in object arrays ([5062d8b](https://github.com/dnrovs/mineos-market-js/commit/5062d8bca77d819087e826685cac0ccf8af5ed94))
+
 ## [3.0.3](https://github.com/dnrovs/mineos-market-js/compare/v3.0.2...v3.0.3) (2025-12-15)
 
 
