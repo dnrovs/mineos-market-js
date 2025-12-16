@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.3](https://github.com/dnrovs/mineos-market-js/compare/v3.0.2...v3.0.3) (2025-12-15)
+
+
+### Bug Fixes
+
+* fixed handling `dependenciesData` object in publication ([8f9b96d](https://github.com/dnrovs/mineos-market-js/commit/8f9b96d3ed5d6b80458af608973b376233ffa1c1))
+
 ## [3.0.2](https://github.com/dnrovs/mineos-market-js/compare/v3.0.1...v3.0.2) (2025-12-15)
 
 
