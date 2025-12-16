@@ -92,7 +92,11 @@ export class Core {
 
         let parsedContent: ApiResponse
         try {
-            parsedContent = APIResponseSchema.parse(jsonContent)
+            if (config.validateResponses) {
+                parsedContent = APIResponseSchema.parse(jsonContent)
+            } else {
+                parsedContent = jsonContent as ApiResponse
+            }
         } catch (err) {
             if (err instanceof z.ZodError) {
                 throw new SchemaError(
@@ -124,7 +128,11 @@ export class Core {
 
         if (schema) {
             try {
-                return schema.parse(parsedContent.result)
+                if (config.validateResponses) {
+                    return schema.parse(parsedContent.result)
+                } else {
+                    return parsedContent.result as T
+                }
             } catch (err) {
                 if (err instanceof z.ZodError) {
                     throw new SchemaError(
