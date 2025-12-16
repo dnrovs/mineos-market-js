@@ -25,30 +25,41 @@ export function normalize(
 }
 
 export function forceStringKeys(
-    object: Record<string, JsonValue>,
+    object: Record<string, JsonValue> | JsonValue[],
     keys: string[]
 ): JsonValue {
-    for (const [key, value] of Object.entries(object)) {
-        if (keys.includes(key) && typeof value === 'number') {
-            object[key] = String(value)
-        } else if (
-            value !== null &&
-            typeof value === 'object' &&
-            !Array.isArray(value)
-        ) {
-            object[key] = forceStringKeys(
-                value as Record<string, JsonValue>,
-                keys
-            )
-        } else if (value !== null && Array.isArray(value)) {
-            object[key] = value.map((item) =>
-                item !== null &&
-                typeof item === 'object' &&
-                !Array.isArray(item)
-                    ? forceStringKeys(item as Record<string, JsonValue>, keys)
-                    : item
-            )
+    if (typeof object === 'object' && !Array.isArray(object)) {
+        for (const [key, value] of Object.entries(object)) {
+            if (keys.includes(key) && typeof value === 'number') {
+                object[key] = String(value)
+            } else if (
+                value !== null &&
+                typeof value === 'object' &&
+                !Array.isArray(value)
+            ) {
+                object[key] = forceStringKeys(
+                    value as Record<string, JsonValue>,
+                    keys
+                )
+            } else if (value !== null && Array.isArray(value)) {
+                object[key] = value.map((item) =>
+                    item !== null &&
+                    typeof item === 'object' &&
+                    !Array.isArray(item)
+                        ? forceStringKeys(
+                              item as Record<string, JsonValue>,
+                              keys
+                          )
+                        : item
+                )
+            }
         }
+    } else if (Array.isArray(object)) {
+        return object.map((item) =>
+            item !== null && typeof item === 'object' && !Array.isArray(item)
+                ? forceStringKeys(item as Record<string, JsonValue>, keys)
+                : item
+        )
     }
     return object
 }

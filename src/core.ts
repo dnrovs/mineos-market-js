@@ -116,9 +116,9 @@ export class Core {
         }
 
         if (
-            parsedContent.result &&
-            typeof parsedContent.result === 'object' &&
-            !Array.isArray(parsedContent.result)
+            (parsedContent.result &&
+                typeof parsedContent.result === 'object') ||
+            Array.isArray(parsedContent.result)
         ) {
             parsedContent.result = forceStringKeys(
                 parsedContent.result,
