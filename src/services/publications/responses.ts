@@ -131,7 +131,9 @@ export const PublicationSchema /*: z.ZodType<Publication>*/ = z.object({
     timestamp: z.number(),
     initialDescription: z.string(),
     translatedDescription: z.string(),
-    dependenciesData: z.array(z.union([DependencySchema, z.undefined()])),
+    dependenciesData: z
+        .array(z.union([DependencySchema, z.undefined()]))
+        .optional(),
     dependencies: z.array(z.number()).optional(),
     allDependencies: z.array(z.number()).optional(),
     iconUrl: z.string().optional(),

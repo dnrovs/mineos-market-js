@@ -166,7 +166,7 @@ export class PublicationsService extends BaseService implements Publications {
     }
 
     async getPublication(params: GetPublicationParams): Promise<Publication> {
-        const data = await this.core.request(
+        const { dependenciesData, ...data } = await this.core.request(
             'publication',
             {
                 file_id: params.fileId,
@@ -176,15 +176,20 @@ export class PublicationsService extends BaseService implements Publications {
             PublicationSchema
         )
 
-        const dependenciesData = Object.fromEntries(
-            Object.entries(data.dependenciesData).filter(
-                (entry): entry is [string, Dependency] => entry[1] !== undefined
+        const filteredDependenciesData: Record<string, Dependency> | undefined =
+            dependenciesData &&
+            Object.fromEntries(
+                Object.entries(dependenciesData).filter(
+                    (entry): entry is [string, Dependency] =>
+                        entry[1] !== undefined
+                )
             )
-        )
 
         return {
             ...data,
-            dependenciesData: dependenciesData ? dependenciesData : {}
+            ...(filteredDependenciesData && {
+                dependenciesData: filteredDependenciesData
+            })
         }
     }
 
